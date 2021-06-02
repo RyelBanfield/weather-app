@@ -11,8 +11,30 @@
   <title>JS-Weather App</title>
 </head>
 
-<body>
-  
+<body class="bg-dark text-white">
+
+  <main>
+    <header class="text-center mt-5">
+      <h1>Weather App</h1>
+      <p>
+        Built by
+        <a class="link-danger" href="https://ryelbanfield.github.io/" target="_blank" rel="noopener noreferrer">Ryel
+          Banfield</a>
+      </p>
+    </header>
+
+    <div class="search-bar container d-flex mt-5">
+      <input type="text" placeholder="Enter city name" class="form-control m-1" />
+      <button class="search-button bi-search btn btn-danger m-1"></button>
+    </div>
+
+    <div class="results container d-flex flex-column align-items-center mt-5 fs-5">
+      <div class="name mt-2"></div>
+      <div class="weather d-flex flex-column align-items-center mt-2"></div>
+      <div class="temp mt-2"></div>
+    </div>
+  </main>
+
   <script src="bundle.js"></script>
 </body>
 
