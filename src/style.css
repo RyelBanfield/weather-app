@@ -3,3 +3,8 @@ body {
   background-repeat: no-repeat;
   min-height: 95vh;
 }
+
+main {
+  min-height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+}
