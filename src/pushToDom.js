@@ -1,4 +1,9 @@
-const pushToDom = (name, weatherName, weatherIcon, temp) => {
+import clearSky from './images/clearSky.jpg';
+import cloudy from './images/cloudy.jpg';
+import snow from './images/snow.jpg';
+import rain from './images/rain.jpg';
+
+const pushToDom = (name, weatherMain, temp, units) => {
   // QUERY PARENTS
   const resultsDiv = document.querySelector('.results');
 
@@ -17,14 +22,18 @@ const pushToDom = (name, weatherName, weatherIcon, temp) => {
 
   const weatherIconElement = document.createElement('img');
   weatherIconElement.classList.add('w-75');
-  weatherIconElement.src = `http://openweathermap.org/img/w/${weatherIcon}.png`;
+  weatherIconElement.src = `http://openweathermap.org/img/w/${weatherMain.icon}.png`;
 
   const weatherNameElement = document.createElement('p');
-  weatherNameElement.textContent = weatherName;
+  weatherNameElement.textContent = weatherMain.main;
 
   const tempElement = document.createElement('p');
   tempElement.textContent = Math.floor(temp);
-  tempElement.innerHTML += '&#8451';
+  if (units === 'metric') {
+    tempElement.innerHTML += '&#8451';
+  } else {
+    tempElement.innerHTML += '&#8457;';
+  }
 
   // APPEND TO PARENTS
   nameDiv.appendChild(nameElement);
@@ -33,28 +42,19 @@ const pushToDom = (name, weatherName, weatherIcon, temp) => {
 
   resultsDiv.append(nameDiv, weatherDiv, tempDiv);
 
-  // GIPHY HANDLING
-  const newWeatherName = weatherName.replace(/\s/g, '+');
-  const giphyUrl = `https://api.giphy.com/v1/gifs/search?q=${newWeatherName}&api_key=U9aIyKli7Jxp38TqdOC2yePIEm07ZSHb`;
-
-  const GiphyAJAXCall = new XMLHttpRequest();
-  GiphyAJAXCall.open('GET', giphyUrl);
-  GiphyAJAXCall.send();
-
-  GiphyAJAXCall.addEventListener('load', (callResponse) => {
-    const data = callResponse.target.response;
-    const response = JSON.parse(data);
-    const imageUrls = response.data;
-    const container = document.querySelector('.giphy-container');
-    container.innerHTML = '';
-
-    imageUrls.forEach((image, index) => {
-      setTimeout(() => {
-        const imageUrl = image.images.fixed_height.url;
-        container.innerHTML = `<img src="${imageUrl}" class="m-1">`;
-      }, index * 2000);
-    });
-  });
+  // // SET BACKGROUND
+  const body = document.querySelector('body');
+  if (weatherMain.main === 'Clear') {
+    body.style.backgroundImage = `url(${clearSky})`;
+  } else if (weatherMain.main === 'Clouds') {
+    body.style.backgroundImage = `url(${cloudy})`;
+  } else if (weatherMain.main === 'Snow') {
+    body.style.backgroundImage = `url(${snow})`;
+  } else if (weatherMain.main === 'Rain') {
+    body.style.backgroundImage = `url(${rain})`;
+  } else {
+    body.style.backgroundImage = 'url("")';
+  }
 };
 
 export default pushToDom;
