@@ -2,9 +2,9 @@
 
 [Click here to view live demo](https://ryelbanfield.github.io/weather-app/)
 
-A simple todo list app.
+A weather app.
 
-This web app was built using JavaScript and allow users to use all the features of the common todo list.
+This web app was built using JavaScript and allow users get data in a simple weather app.
 
 ![screenshot](./Screenshot.png)
 
