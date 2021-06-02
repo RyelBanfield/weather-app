@@ -18,7 +18,7 @@ const consoleLogData = (weatherData) => {
   console.log(weatherData);
 };
 
-// API HANDLING
+// WEATHER API HANDLING
 const getWeatherData = async (location) => {
   const apiKey = '303a464ea9aa375660872ba0d5b3afc0';
   const apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`;
