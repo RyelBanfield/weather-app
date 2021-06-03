@@ -4,7 +4,7 @@
 
 A weather app.
 
-This web app was built using JavaScript and allow users to get simple data.
+This web app was built using JavaScript and allow users to get weather information.
 
 ![screenshot](./Screenshot.png)
 
