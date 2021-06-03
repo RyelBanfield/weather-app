@@ -2,9 +2,7 @@
 
 [Click here to view live demo](https://ryelbanfield.github.io/weather-app/)
 
-A weather app.
-
-This web app was built using JavaScript and allow users to get weather information.
+### This web app was built using JavaScript and allow users to get weather information.
 
 ![screenshot](./Screenshot.png)
 
