@@ -18,7 +18,8 @@ Additional description about the project and its features.
 ## Getting Started
 
 - Download or clone this repo by using `git clone https://github.com/RyelBanfield/weather-app.git`
-- Enter the project folder and run locally by using `npm start`.
+- Run `npm install`
+- Enter the project folder and run locally by using `npm start`
 
 ## Author
 
