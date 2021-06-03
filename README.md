@@ -1,4 +1,4 @@
-# Todo List
+# Weather App
 
 [Click here to view live demo](https://ryelbanfield.github.io/weather-app/)
 
